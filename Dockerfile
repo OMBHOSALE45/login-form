@@ -1,7 +1,16 @@
 FROM python:3.10-slim
-WORKDIR /app
-COPY . .
-RUN pip install --no-cache-dir -r requirements.txt
 
+# Set working directory
+WORKDIR /app
+
+# Copy project files
+COPY . .
+
+# Install Flask
+RUN pip install flask
+
+# Expose Flask port
 EXPOSE 5000
-CMD ["python","app.py"] 
+
+# Run Flask app
+CMD ["python", "app.py"]
