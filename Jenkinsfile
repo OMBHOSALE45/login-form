@@ -49,9 +49,9 @@ pipeline {
       steps {
         script {
           if (isUnix()) {
-            sh "docker run -d --name my-flask-app -p 5000:5000 ${IMAGE_NAME}"
+            sh "docker run -d --name login-form -p 5000:5000 ${IMAGE_NAME}"
           } else {
-            bat "docker run -d --name my-flask-app -p 5000:5000 ${IMAGE_NAME}"
+            bat "docker run -d --name login-form -p 5000:5000 ${IMAGE_NAME}"
           }
         }
       }
